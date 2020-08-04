@@ -6,7 +6,6 @@ class StudentsController < ApplicationController
       @students = Student.all
     end
 
-    render 'index'
   end
   
   def new
