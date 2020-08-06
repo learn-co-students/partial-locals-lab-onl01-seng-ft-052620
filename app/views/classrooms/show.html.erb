@@ -3,3 +3,7 @@ Classroom Info
 <%= @classroom.course_name %>
 <%= @classroom.semester %>
 </p>
+
+<% @classroom.students.each do |student| %>
+  <%= render student %>
+<% end %>

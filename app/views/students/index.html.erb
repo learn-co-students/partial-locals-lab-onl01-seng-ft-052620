@@ -1,0 +1,5 @@
+<%= form_tag students_path, method: 'GET' %>
+    <%= text_field_tag :query, "", placeholder:"Search for a student", autocomplete: "off" %>
+    <%= submit_tag "Search" %>
+
+<%= render @students %>
