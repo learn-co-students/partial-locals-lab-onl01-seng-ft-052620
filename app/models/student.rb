@@ -13,4 +13,15 @@
 class Student < ActiveRecord::Base
   has_many :classroom_students
   has_many :classrooms, through: :classroom_students
+
+  # Student search when it receives an empty search argument returns all students
+  # Student search when it receives a search query returns all students whose names contain the given string
+
+  def self.search(arg)
+    if arg.present?
+      Student.where("name Like ?", "%#{arg}%")
+    else
+      self.all 
+    end
+  end
 end
