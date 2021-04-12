@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= form_tag students_path, method: :get do %>
+  <h1>Search form:</h1>
+    Search by student name: <%= text_field_tag(:search, params[:query]) %>
+    <%= submit_tag("Search") %>
+<% end %>
 <%= yield %>
 
 </body>
